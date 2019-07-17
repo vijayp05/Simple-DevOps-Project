@@ -12,15 +12,15 @@ Download maven packages https://maven.apache.org/download.cgi onto Jenkins serve
   # Creating maven directory under /opt
   mkdir /opt/maven
   cd /opt/maven
-  # downloading maven version 3.6.0
-  wget http://mirrors.fibergrid.in/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.zip
-  unzip /opt/maven/apache-maven-3.6.0-bin.zip
+  # downloading maven version 3.6.1
+  wget http://mirrors.estointernet.in/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+  unzip /opt/maven/apache-maven-3.6.1-bin.tar.gz
  ```
 	
 Setup M2_HOME and M2 paths in .bash_profile of user and add these to path variable
 ```sh
   vi ~/.bash_profile
-  M2_HOME=/opt/maven/apache-maven-3.6.0
+  M2_HOME=/opt/maven/apache-maven-3.6.1
   M2=$M2_HOME/bin
   PAHT=<Existing_PATH>:$M2_HOME:$M2
 ```
@@ -35,7 +35,10 @@ So far you have completed installation of maven software to support maven plugin
 #### Setup maven on jenkins console
 - Install maven plugin without restart  
   - `Manage Jenkins` > `Jenkins Plugins` > `available` > `Maven Invoker`
-
+#### Update:
+- Install "Maven Integration plugin" to without restart
+  - `Manage Jenkins` > `Jenkins Plugins` > `available` > `Maven Integration plugin`
 - Configure maven path
   - `Manage Jenkins` > `Global Tool Configuration` > `Maven`
+
 
